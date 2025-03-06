@@ -105,8 +105,8 @@ def obter_escolha_usuario(qtd_opcoes, mensagem="Escolha: "):
             print("⚠ Entrada inválida, use apenas números.")
 
 
-def main():
-    """‘Loop’ principal do jogo."""
+def main() -> None:
+    """Loop principal do jogo."""
     jogo = Jogo("facil", 40)
     print("\n🎉 Bem-vindo ao Jogo Matemático! 🎉\n")
 
@@ -134,7 +134,7 @@ def main():
             power_up = input("Escolha o power-up: mais_tempo, mais_pontos ou pular_questao: ").strip()
             if power_up in ["mais_tempo", "mais_pontos", "pular_questao"]:
                 if jogo.usar_power_up(power_up):
-                    continue  # Se pulou a questão, volta ao início do ‘loop’
+                    continue  # Se pulou a questão, volta ao início do loop
             else:
                 print("⚠ Power-up inválido! Tente um válido.")
         elif isinstance(respostas[escolha - 1], (int, float)) and respostas[escolha - 1] == resposta_correta:
