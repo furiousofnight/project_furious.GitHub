@@ -4,9 +4,9 @@ import os
 
 app = Flask(__name__)
 
-# Configuração de segurança: SECRET_KEY lida do ambiente
-app.secret_key = os.getenv("SECRET_KEY", "chave_secreta_para_dev")  # Use uma variável segura em produção
-
+# Configuração de segurança: SECRET_KEY lida como variável de ambiente
+# O padrão "chave_secreta_para_dev" é usado apenas em ambiente de desenvolvimento/local
+app.secret_key = os.environ.get("SECRET_KEY", "chave_secreta_para_dev")
 
 class Jogo:
     def __init__(self):
