@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, flash, url_for
 import random
 import os
 
-app = Flask(__name__)
+app = Flask(__name__)git
 
 # Configuração de segurança: SECRET_KEY lida como variável de ambiente
 # O padrão "chave_secreta_para_dev" é usado apenas em ambiente de desenvolvimento/local
