@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, flash, url_for
 import random
-import os  # Para manipular variáveis de ambiente
+import os
 
 app = Flask(__name__)
 
@@ -143,12 +143,6 @@ def fim_do_jogo():
 
 
 if __name__ == "__main__":
-    # Configuração flexível para produção e desenvolvimento
-    host = "0.0.0.0"  # Acessível externamente
-    port = int(os.getenv("PORT", 5000))  # Porta padrão ou configurada no ambiente
-    debug = os.getenv("FLASK_ENV") == "development"  # Debug ativo apenas no modo dev
-
-    # Para produção, precisará usar waitress ou gunicorn no terminal, como:
-    # waitress-serve --port=$PORT app:app
-    # gunicorn -w 4 -b 0.0.0.0:$PORT app:app
-    app.run(host=host, port=port, debug=debug)
+    # Configuração para produção
+    port = int(os.getenv("PORT", 5000))  # Porta configurada no ambiente (Heroku configura automaticamente)
+    app.run(host="0.0.0.0", port=port)
